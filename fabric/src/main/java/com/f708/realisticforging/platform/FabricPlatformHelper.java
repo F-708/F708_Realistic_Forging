@@ -1,6 +1,7 @@
 package com.f708.realisticforging.platform;
 
 import com.f708.realisticforging.platform.services.IPlatformHelper;
+import com.f708.realisticforging.registry.FModItems;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.world.item.Item;
 
@@ -26,7 +27,8 @@ public class FabricPlatformHelper implements IPlatformHelper {
     }
 
     @Override
-    public Supplier<Item> registerItem(Supplier<Item> supplier) {
-        return null;
+    public <T extends Item> Supplier<T> registerItem(String name, Supplier<T> supplier) {
+        FModItems.register(name, supplier);
+        return supplier;
     }
 }

@@ -16,5 +16,5 @@ public interface IPlatformHelper {
         return isDevelopmentEnvironment() ? "development" : "production";
     }
 
-    Supplier<Item> registerItem(Supplier<Item> supplier);
+    <T extends Item> Supplier<T> registerItem(String name, Supplier<T> supplier);
 }
