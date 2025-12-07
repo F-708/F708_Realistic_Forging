@@ -4,7 +4,9 @@
   "package": "com.f708.realisticforging.mixin",
   "refmap": "realisticforging.refmap.json",
   "compatibilityLevel": "JAVA_18",
-  "mixins": [],
+  "mixins": [
+    "AbstractCookingRecipeMixin"
+  ],
   "client": [
     "MixinMinecraft"
   ],

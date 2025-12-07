@@ -11,10 +11,11 @@ import java.util.function.Supplier;
 public class FModItems {
 
     public static <T extends Item>Supplier<T> register(String name, Supplier<T> item){
+        T stack = item.get();
         Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(
                 Constants.MOD_ID, name
-        ), item.get());
-        return item;
+        ), stack);
+        return () -> stack;
     }
 
     public static void initialize(){}
